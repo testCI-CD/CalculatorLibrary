@@ -22,7 +22,7 @@ jobs:
 
             # install packages to a temporary directory and zip it
             touch requirements.txt  # safeguard in case there are no packages
-            pip3.7 install -r requirements.txt
+            pip install -r requirements.txt
       # Step 3: run linter and tests
       - run:
           name: run tests
