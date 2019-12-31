@@ -1,0 +1,4 @@
+[
+  "test_calculator.py::TestCalculator::test_addition",
+  "test_calculator.py::TestCalculator::test_subtraction"
+]
