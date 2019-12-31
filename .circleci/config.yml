@@ -16,7 +16,13 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt
+            # use Pipenv to create a requirement.txt file
+            echo '... creating requirements.txt from Pipfile.lock'
+            pipenv lock -r > requirements.txt
+
+            # install packages to a temporary directory and zip it
+            touch requirements.txt  # safeguard in case there are no packages
+            pip3.7 install -r requirements.txt
       # Step 3: run linter and tests
       - run:
           name: run tests
